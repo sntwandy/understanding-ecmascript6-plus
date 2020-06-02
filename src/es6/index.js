@@ -91,3 +91,60 @@ console.log(globalVar);
 
 const a = 'b';
 a = 'a'; // Output: Error
+
+// *************************************
+
+// Objects parameters before ECMAScript 6
+
+let name = 'Megan';
+let age = 20;
+
+obj = { name: name, age: age };
+
+// Objects parameters after ECMAScript 6
+
+obj2 = { name, age };
+
+console.log(obj2);
+
+// function and arrow functions before ECMAScript 6
+
+const names = [ { name: 'Megan', age: 20 }, { name: 'Wandy', age: 21 } ];
+
+let listOfNames = names.map( function (item) {
+    console.log(item.name);
+} );
+
+// function and arrow functions after ECMAScript 6
+
+let listOfNames2 = names.map( item => console.log(item.name) );
+
+const listOfNames3 = (name, age, country) => {
+    // code here
+};
+
+const listOfNames4 = name => {
+    // code here
+}
+
+number = 5;
+const square = num => num * num;
+
+console.log(square(number));
+
+
+// Promises in ECMAScript 6
+
+const helloPromise = () => {
+    return new Promise ( (resolve, reject) => {
+        if (true) {
+            resolve('Hey!');
+        } else {
+            reject('Opps!');
+        }
+    });
+}
+
+helloPromise()
+    .then( response => console.log(response) )
+    .catch( error => console.log(error) );
