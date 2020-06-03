@@ -148,3 +148,47 @@ const helloPromise = () => {
 helloPromise()
     .then( response => console.log(response) )
     .catch( error => console.log(error) );
+
+//*************************************************
+
+// Introduce class to ECMAScript 6
+
+class calculator {
+    constructor () {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    sum(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new calculator();
+console.log(calc.sum(5, 5));
+
+// Introduce import to ECMAScript 6
+
+// import { hello } from './module'; this is ES6
+const hello = require('./module'); // It's 'cause we're using nodejs
+
+console.log(hello('Mars!!!'));
+
+// Introduce generator in ECMAScript 6
+
+function* helloWorld () {
+    if (true) {
+        yield 'Hello, ';
+    }
+    if (true) {
+        yield 'World';
+    }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
