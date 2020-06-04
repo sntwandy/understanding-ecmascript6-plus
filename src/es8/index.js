@@ -37,3 +37,33 @@ console.log(string.padEnd(9, ' *_*'));
 const obj = {
     name: 'Megan',
 }
+
+// ******************************************
+
+// async, await in ECMAScript 8
+
+const helloWorld = () => {
+    return new Promise( (resolve, reject) => {
+        (false) ? setTimeout(() => resolve('Hello World!'), 3000) : reject(new Error(' Test error'));
+    });
+};
+
+const helloAsync = async () => {
+    const hello = await helloWorld();
+    console.log(hello);
+}
+
+helloAsync();
+
+// other way to use async, await
+
+const anotherFunction = async () => {
+    try {
+        const hello = await helloWorld();
+        console.log(hello);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+anotherFunction();
